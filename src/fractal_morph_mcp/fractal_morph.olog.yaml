@@ -1,0 +1,315 @@
+# Fractal Morph Olog - Categorical Taxonomy
+# Three-layer Lushy architecture for Falconer's random fractals
+# Based on Dr. İrem Hafız's "A New Aesthetics of Vastness" (GA2024)
+
+# ==============================================================================
+# LAYER 1 - Pure Categorical Taxonomy
+# ==============================================================================
+
+fractal_types:
+  koch_snowflake:
+    name: "von Koch Snowflake"
+    description: "Equilateral triangle with recursive 60° branching on all sides"
+    base_dimension: 1.26
+    symmetry: "hexagonal (6-fold rotational)"
+    typical_recursion_depth: 4-6
+    visual_signature: "Star-like form with intricate perimeter"
+    natural_analogs: ["snowflakes", "coastlines", "frost patterns"]
+    
+  koch_curve:
+    name: "von Koch Curve"
+    description: "Single-sided recursive branching with 60° angles"
+    base_dimension: 1.26
+    symmetry: "self-similar along axis"
+    typical_recursion_depth: 5-7
+    visual_signature: "Infinitely detailed line with uniform branching"
+    natural_analogs: ["coastlines", "lightning paths", "river networks"]
+    
+  sierpinski_triangle:
+    name: "Sierpinski Triangle"
+    description: "Recursive removal of inverted triangles"
+    base_dimension: 1.58
+    symmetry: "triangular (3-fold rotational)"
+    typical_recursion_depth: 5-8
+    visual_signature: "Holey triangular mesh with decreasing density"
+    natural_analogs: ["leaf venation", "crack patterns", "coral structures"]
+    
+  sierpinski_carpet:
+    name: "Sierpinski Carpet"
+    description: "Recursive removal of square regions in 3x3 grid"
+    base_dimension: 1.89
+    symmetry: "square (4-fold rotational)"
+    typical_recursion_depth: 4-6
+    visual_signature: "Dense perforated square with hierarchical voids"
+    natural_analogs: ["sponge structures", "porous materials", "lung alveoli"]
+    
+  dragon_curve:
+    name: "Heighway Dragon Curve"
+    description: "Self-avoiding space-filling curve with 90° turns"
+    base_dimension: 1.52
+    symmetry: "asymmetric with local 90° structure"
+    typical_recursion_depth: 10-15
+    visual_signature: "Writhing dragon-like form filling planar region"
+    natural_analogs: ["protein folding", "intestinal villi", "meandering rivers"]
+    
+  hilbert_curve:
+    name: "Hilbert Space-Filling Curve"
+    description: "Continuous curve visiting every point in square grid"
+    base_dimension: 2.0
+    symmetry: "square subdivisions"
+    typical_recursion_depth: 5-7
+    visual_signature: "Maze-like path filling square completely"
+    natural_analogs: ["brain cortex folding", "intestinal surface", "labyrinthine patterns"]
+    
+  peano_curve:
+    name: "Peano Space-Filling Curve"
+    description: "Nine-subdivision space-filling with vertical/horizontal segments"
+    base_dimension: 2.0
+    symmetry: "square grid structure"
+    typical_recursion_depth: 4-6
+    visual_signature: "Dense meander covering entire plane"
+    natural_analogs: ["blood vessel networks", "root systems", "neural pathways"]
+
+
+# Falconer's five modifications for creating random fractals
+# From Hafız (GA2024): "DALL-E presented five specific modifications..."
+falconer_modifications:
+  irregular_recursion:
+    mathematical_operation: "Unequal subdivision of line segments"
+    parameter_range: "0.0 (uniform) to 1.0 (maximally irregular)"
+    visual_effect: "Breaks regular pattern; creates natural-looking variation"
+    natural_analog: "Coastline irregularity, tree branch thickness variation"
+    implementation: "Randomize subdivision ratios instead of fixed 1:1:1"
+    
+  angle_variance:
+    mathematical_operation: "Varying angles instead of fixed geometric angles"
+    parameter_range: "0.0 (fixed angles) to 1.0 (wild variation)"
+    visual_effect: "Organic branching instead of rigid geometry"
+    natural_analog: "Tree branching angles, lightning path deviation"
+    implementation: "Add Gaussian noise to base angles (e.g. 60° ± variance)"
+    
+  iteration_depth_variation:
+    mathematical_operation: "Different recursion depths in spatial regions"
+    parameter_range: "0.0 (uniform depth) to 1.0 (extreme variation)"
+    visual_effect: "Detail contrast; some areas highly articulated, others simple"
+    natural_analog: "Coral detail variation, mountain range complexity gradients"
+    implementation: "Spatially modulate recursion depth based on position/rules"
+    
+  curve_introduction:
+    mathematical_operation: "Transform straight segments into curves"
+    parameter_range: "0.0 (all straight) to 1.0 (all curves)"
+    visual_effect: "Biomorphic softening of rigid mathematical structure"
+    natural_analog: "Organic cell membranes, flowing water boundaries"
+    implementation: "Replace line segments with Bezier curves or arcs"
+    
+  dimension_manipulation:
+    mathematical_operation: "Adjust fractal dimension through scaling/removal"
+    parameter_range: "1.0 (line) to 3.0 (volume-filling)"
+    visual_effect: "Controls overall complexity and space-filling character"
+    natural_analog: "Dimensionality of natural phenomena (coastlines ~1.25, lungs ~2.97)"
+    implementation: "Modify generator scaling factors and removal patterns"
+
+
+# Visual vocabulary for complexity levels
+complexity_vocabulary:
+  minimal:
+    range: "0.0 - 0.25"
+    visual_character: "Clean, sparse, geometric"
+    surface_quality: "Smooth with minimal texture"
+    edge_definition: "Sharp, crisp mathematical boundaries"
+    perceptual_impact: "Calm, ordered, crystalline precision"
+    
+  moderate:
+    range: "0.25 - 0.50"
+    visual_character: "Balanced, articulated, semi-organic"
+    surface_quality: "Textured with visible detail structure"
+    edge_definition: "Mixed sharp and soft boundaries"
+    perceptual_impact: "Engaging, harmonious, sophisticated"
+    
+  high:
+    range: "0.50 - 0.75"
+    visual_character: "Dense, intricate, natural-resembling"
+    surface_quality: "Richly textured with hierarchical detail"
+    edge_definition: "Irregular, organic-looking boundaries"
+    perceptual_impact: "Striking, wonder-inducing, sublime hints"
+    
+  extreme:
+    range: "0.75 - 1.0"
+    visual_character: "Overwhelming, data-rich, unbounded"
+    surface_quality: "Infinitely detailed appearance, fractal cascade"
+    edge_definition: "Rough, natural, boundary dissolution"
+    perceptual_impact: "Sublime, astonishing, exceeds comprehension"
+
+
+# Color palette definitions
+color_palettes:
+  monochrome:
+    description: "Black on white or white on black, pure mathematical clarity"
+    primary: "black"
+    background: "white"
+    accent: "none"
+    aesthetic: "Falconer's original diagrams - focus on form"
+    
+  thermal:
+    description: "Heat map colors showing recursion depth or density"
+    gradient: ["deep blue", "cyan", "green", "yellow", "orange", "red"]
+    mapping: "Blue = low iteration, Red = high iteration"
+    aesthetic: "Scientific visualization, data intensity"
+    
+  biological:
+    description: "Fluorescence microscopy palette - cyan/magenta/yellow"
+    channels:
+      cyan: "Structure/membranes"
+      magenta: "Nuclei/dense regions"
+      yellow: "Surface detail/cilia analog"
+    background: "black"
+    aesthetic: "Anthrobot imaging, cellular aesthetic"
+    
+  cosmic:
+    description: "Deep space nebula colors - purple, blue, orange, gold"
+    palette: ["deep purple", "electric blue", "burnt orange", "gold"]
+    background: "black with star field"
+    aesthetic: "Sublime vastness, astronomical scale feeling"
+
+
+# Rendering style options
+rendering_styles:
+  line_art:
+    description: "Single continuous line drawing, no fills"
+    technique: "Vector-style pure paths"
+    visual_quality: "Clean, precise, architectural"
+    best_for: "Low-moderate complexity fractals"
+    
+  filled_regions:
+    description: "Solid filled shapes with defined boundaries"
+    technique: "Area fills with stroke outlines"
+    visual_quality: "Bold, graphic, stained-glass effect"
+    best_for: "Space-filling fractals, high contrast"
+    
+  gradient_shading:
+    description: "Depth and dimension through value gradients"
+    technique: "Smooth transitions suggesting 3D form"
+    visual_quality: "Volumetric, sculptural, nuanced"
+    best_for: "High complexity, natural resemblance"
+    
+  particle_trace:
+    description: "Dots or particles along fractal paths"
+    technique: "Stippling or point cloud representation"
+    visual_quality: "Atmospheric, emergent, computational"
+    best_for: "Extreme complexity, sublime effect"
+
+
+# ==============================================================================
+# LAYER 2 - Intentionality / Theoretical Framework
+# ==============================================================================
+
+intentionality:
+  core_principle:
+    concept: "Aesthetics of Vastness Through Random Fractals"
+    explanation: "Regular fractals are symmetrical and predictable. Falconer's random variations introduce data vastness that creates natural resemblance and sublime aesthetic experience."
+    hafiz_framework: "Computational vastness (data-driven variation) → Formal complexity (non-standard forms) → Perceptual unboundedness (sublime experience)"
+    
+  vastness_through_variation:
+    principle: "Increasing parameter space creates exponential formal possibilities"
+    implementation: "Five Falconer modifications = 5-dimensional parameter space with continuous values"
+    visual_result: "Each parameter combination yields unique, non-repeating fractal variant"
+    
+  natural_resemblance:
+    principle: "Random fractals more closely resemble Nature than regular fractals"
+    implementation: "Irregularity, angle variance, depth variation mirror natural growth processes"
+    visual_result: "Coastlines, trees, cellular structures emerge from mathematical operations"
+    
+  sublime_unboundedness:
+    principle: "Kant's sublime: imagination fails to bound the object"
+    implementation: "Extreme complexity overwhelms perceptual categorization"
+    visual_result: "Viewer experiences awe, astonishment, wonder at data density"
+    
+  data_driven_emergence:
+    principle: "Complexity emerges from simple rules + vast parameter space"
+    implementation: "Base fractal + five modifications = emergent non-standard forms"
+    visual_result: "Outcomes feel 'designed' but are deterministically computed"
+
+
+# ==============================================================================
+# Cross-Domain Composition Targets
+# ==============================================================================
+
+composition_targets:
+  anthrobot_morphology:
+    shared_structure:
+      - "Symmetry patterns (radial, bilateral, asymmetric)"
+      - "Complexity hierarchies (minimal to extreme)"
+      - "Surface textures (smooth to highly articulated)"
+      - "Movement/growth patterns (directional, circular, random)"
+    functor_mapping:
+      complexity_target: "Biological maturity stage"
+      pattern_target: "Movement trajectory type"
+      texture_target: "Ciliary corona density"
+    natural_transformation:
+      anthrobot_to_fractal: "Implemented in map_anthrobot_to_fractal()"
+      preserves_structure: "Symmetry → recursion irregularity mapping is bijective"
+      
+  catastrophe_morphology:
+    shared_structure:
+      - "Geometric sharpness (fold, cusp, swallowtail)"
+      - "Bifurcation patterns (single, double, triple)"
+      - "Surface continuity (smooth vs discontinuous)"
+    functor_mapping:
+      complexity_target: "Catastrophe type progression (A2 → A7)"
+      pattern_target: "Control parameter space dimension"
+      texture_target: "Critical point multiplicity"
+      
+  diatom_morphology:
+    shared_structure:
+      - "Radial symmetry patterns (centric diatoms)"
+      - "Bilateral elongation (pennate diatoms)"
+      - "Surface perforation patterns (frustule pores)"
+      - "Hierarchical scale structure (macro → micro detail)"
+    functor_mapping:
+      complexity_target: "Frustule perforation density"
+      pattern_target: "Valve symmetry type"
+      texture_target: "Silica ornamentation level"
+
+
+# ==============================================================================
+# Research Citations and Attribution
+# ==============================================================================
+
+citations:
+  falconer: >
+    Falconer, Kenneth. "Fractal Geometry: Mathematical Foundations and Applications." 
+    Chichester: John Wiley & Sons, 2003.
+    
+  hafiz_ga2024: >
+    Hafız, İrem. "A New Aesthetics of Vastness: Complex Fractal Geometries in Generative AI."
+    XXVII Generative Art Conference - GA2024, 2024.
+    
+  hafiz_phd: >
+    Hafız, İrem. "Towards an Aesthetic Discourse of Computational Design: Re-contextualizing the Sublime."
+    PhD dissertation, Middle East Technical University, 2024. https://hdl.handle.net/11511/110386
+    
+  mennan_nonstandard: >
+    Mennan, Zeynep. "The Question of Non-Standard Form." 
+    METU Journal of the Faculty of Architecture, 25(2), 2008.
+    
+  levin_morphospace: >
+    Levin, Michael. "Morphological Computation and Platonic Morphospace Navigation."
+    Allen Discovery Center, Tufts University. (Referenced for biological → abstract mapping framework)
+
+
+# ==============================================================================
+# Metadata
+# ==============================================================================
+
+server_metadata:
+  name: "fractal-morph-mcp"
+  version: "1.0.0"
+  architecture: "Three-layer Lushy olog"
+  cost_optimization: "60-98% savings vs iterative LLM generation"
+  layer_costs:
+    layer_1_taxonomy: "0 tokens (pure lookup)"
+    layer_2_mapping: "0 tokens (deterministic computation)"
+    layer_3_synthesis: "~100-200 tokens (Claude synthesis preparation)"
+  composition_ready: true
+  domains_integrated: ["anthrobot_morphology"]
+  domains_compatible: ["catastrophe_morphology", "diatom_morphology", "chimeric_sorting"]
